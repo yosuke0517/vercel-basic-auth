@@ -1,0 +1,32 @@
+{
+  "name": "vercel-basic-auth",
+  "repository": "git@github.com:flawyte/vercel-basic-auth.git",
+  "author": "Mickaël Allonneau <mickael.allonneau.pro@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "install": "yarn install:node && yarn install:node-express && yarn install:node-static-auth",
+    "install:node": "cd node/ && yarn",
+    "install:node-express": "cd node-express/ && yarn",
+    "install:node-static-auth": "cd node-static-auth/ && yarn",
+
+    "node": "cd node/ && vercel dev",
+    "deploy:node": "cd node && vercel",
+
+    "node-express": "cd node-express/ && vercel dev",
+    "deploy:node-express": "cd node-express && vercel",
+
+    "node-static-auth": "cd node-static-auth/ && vercel dev",
+    "deploy:node-static-auth": "cd node-static-auth && vercel",
+
+    "test": "TEST_VARIANT=no-credentials jest && TEST_VARIANT=invalid-credentials jest && TEST_VARIANT=valid-credentials jest",
+    "update-static-dirs": "bash update-static-dirs.sh"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
+    "node-fetch": "2.6.7",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3"
+  }
+}
