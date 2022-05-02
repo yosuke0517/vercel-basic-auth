@@ -12,7 +12,7 @@ const auth = (req, res) => new Promise(resolve => {
   resolve(authorized);
 });
 
-const serveHandler = serveStatic(__dirname + '/_static');
+const serveHandler = serveStatic(__dirname + '/public');
 const serve = (req, res, handle404) => new Promise(() => serveHandler(req, res, handle404));
 
 /*

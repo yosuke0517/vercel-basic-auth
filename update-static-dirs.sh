@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # node
-rm -rf node/_static/ \
-&& cp -r _static/ node/
+rm -rf node/public/ \
+&& cp -r public/ node/
 
 # node-express
-rm -rf node-express/_static/ \
-&& cp -r _static/ node-express/
+rm -rf node-express/public/ \
+&& cp -r public/ node-express/
 
 # node-static-auth
-rm -rf node-static-auth/_static/ \
-&& cp -r _static/ node-static-auth/
+rm -rf node-static-auth/public/ \
+&& cp -r public/ node-static-auth/
