@@ -7,7 +7,7 @@ const safeCompare = require('safe-compare');
 
 const app = protect(
   '/admin',
-  (username, password) => safeCompare(username, 'admin') && safeCompare(password, 'admin'),
+  (username, password) => safeCompare(username, process.env.USER_NAME) && safeCompare(password, process.env.PASSWORD),
   {
     directory: __dirname + '/public',
     realm: 'vercel-basic-auth.node-static-auth',
